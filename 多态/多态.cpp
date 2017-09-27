@@ -48,6 +48,9 @@ private:
 };
 
 //多态的实现。一个接口，实现多种不同对象调用；
+//注意这个Item_base &item  他是基类创建的对象，在下面其派生类对象对他调用的
+//时候，也就是传进来的对象是派生类对象的时候，他能自动变成派生类里面的东西，
+//调用的是派生类的函数。如果是Item_base item传，那么都是调用基类的东西
 void  print(Item_base &item,size_t num)
 {
 
@@ -55,12 +58,21 @@ void  print(Item_base &item,size_t num)
 	cout << item.book() << "  " <<num<<"  "<< item.net_price(num)<< endl;
 	
 }
+//多态
 void  print(Item_base *item, size_t num)
 {
 	cout << "book[0]";
 	cout << item->book() << "  " << num << "  " << item->net_price(num) << endl;
 
 }
+////对象传递，在基类中完成操作，派生类对象传进来也会进行基类操作，不存在多态问题
+//void  print(Item_base item, size_t num)
+//{
+//
+//	cout << "*book[1]";
+//	cout << item.book() << "  " << num << "  " << item.net_price(num) << endl;
+//
+//}
 
 
 void main()
