@@ -10,8 +10,6 @@ void main()
 	q.enqueue(11); 
 	q.enqueue(120);
 	cout << q.getFront() << endl;
-	q.dequeue();
-	cout << q.getFront() << endl;
-
+	cout << q.getBack() << endl;
 	system("pause");
 }
