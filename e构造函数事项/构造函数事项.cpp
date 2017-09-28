@@ -7,7 +7,7 @@ public:
 	Widget();//default 构造函数
 	Widget(const Widget &rhs);//copy构造函数
 	Widget & operator=(const Widget &rhs);//copy assignment操作符
-	
+	bool fool(Widget w);//最好不要这样传参数，这是以值方式传参，会调用copy构造函数。
 };
 
 void main()
